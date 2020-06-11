@@ -1,0 +1,94 @@
+<html>
+    <head class="center" >
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Kalkulator</title>
+    </head>
+    
+    <style>
+    h2 {text-align: center;}
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      margin-left:auto;
+      margin-right:auto;
+    }
+    th, td {
+      padding: 5px;
+      width:1%;
+      text-align: center;    
+    }
+</style>
+    
+    <body>
+        <h2>Kalkulator Sederhana</h2>
+        <form method="post" action="Calculator">
+
+            <table style="width:30%">
+                <tr>
+                    <th colspan="4"><input type="text" id="value" name="value" /></th>
+                </tr>
+                <tr>
+                    <td><button type="button" onclick="appendText(7)"> 7 </button></td>
+                    <td><button type="button" onclick="appendText(8)"> 8 </button></td>
+                    <td><button type="button" onclick="appendText(9)"> 9 </button></td>
+                    <td><input type="submit" name ="Div" value="/"/>  </td>
+                </tr>
+                <tr>
+                    <td><button type="button" onclick="appendText(4)">4</button></td>
+                    <td><button type="button" onclick="appendText(5)">5</button></td>
+                    <td><button type="button" onclick="appendText(6)">6</button></td>
+                    <td><input type="submit" name ="Mul" value="*"/> </td>
+                </tr>
+                <tr>
+                    <td><button type="button" onclick="appendText(1)">1</button></td>
+                    <td><button type="button" onclick="appendText(2)">2</button></td>
+                    <td><button type="button" onclick="appendText(3)">3</button></td>
+                    <td><input type="submit" name ="Sub" value="-"/> </td>
+                </tr>
+                <tr>
+                    <td><button type="button" onclick="appendText(0)">0</button></td>
+                    <td><button type="button" onclick="appendText2x(0)">00</button></td>
+                    <td><button type="button" onclick="appendTitik()">.</button></td>
+                    <td><input type="submit" name ="Add" value="+"/> </td>
+                </tr>
+                <tr>
+                    <td><button type="button" onclick="back_space()"><</button></td>
+                    <td><input type="submit" name ="Reset" value="CE"/></td>
+                    <td colspan = "2"><input type="submit" name ="Hasil" value="      =      "/>  </td>
+                </tr>
+            </table>
+
+
+        </form>
+
+
+        <script>
+
+            function appendText(x) {
+                document.getElementById("value").value += x;
+            }
+            function appendText2x(x) {
+                document.getElementById("value").value += x;
+                document.getElementById("value").value += x;
+            }
+            function appendTitik() {
+                document.getElementById("value").value += ".";
+            }
+
+            function back_space() {
+                var arrayexit = document.getElementById("value").value;
+                for (var i = 0; i < arrayexit.length; i++)
+                {
+                    var output = arrayexit.slice(0, -1);
+                    document.getElementById("value").value = output;
+                }
+            }
+
+        //    document.getElementById("operasi").innerHTML = teksnya + "asd "+ tanda; //Set text operasi nya
+        //    
+            document.getElementById("value").value = teksnya;
+        </script>
+
+    </body>
+
+</html>
